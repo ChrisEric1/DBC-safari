@@ -2,7 +2,7 @@ name: uBOL-safari
 on: workflow_dispatch
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-13
     timeout-minutes: 9999
     steps:
       - name: Safari Web Extension Converter
