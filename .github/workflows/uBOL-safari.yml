@@ -8,7 +8,7 @@ jobs:
       - name: Safari Web Extension Converter
         run: |
           wget https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1808-beta/uBOLite.beta.safari.zip
-          unzip uBOLite.beta.safari.zip -qd safari-web-extension-converter
+          unzip -qd safari-web-extension-converter uBOLite.beta.safari.zip
           safari-web-extension-converter --copy-resources --no-open --no-prompt --force safari-web-extension-converter
           xcodebuild safari-web-extension-converter -alltargets
           rm -rf uBOLite.beta.safari.zip
