@@ -14,7 +14,7 @@ jobs:
           rm -rf uBOLite.beta.safari.zip
           zip uBOLite.beta.safari.zip -qr safari-web-extension-converter/*
       - name: Upload
-      uses: actions/upload-artifact@v4.0.0
-      with:
+        uses: actions/upload-artifact@v4.0.0
+        with:
           name: uBOL-safari
           path: safari-web-extension-converter
