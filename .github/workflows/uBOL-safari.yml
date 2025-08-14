@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: uBOL-safari
         run: |
-          wget -O uBOL-safari.zip https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1911-beta/uBOLite.beta.zip
+          wget -O uBOL-safari.zip https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1922-beta/uBOLite.beta.zip
           unzip -d uBOL-safari uBOL-safari.zip
           xcodebuild build -alltargets -project "./uBOL-safari/dist/safari/xcode/uBlock Origin Lite.xcodeproj"
           zip uBOL-safari.zip -9r uBOL-safari
