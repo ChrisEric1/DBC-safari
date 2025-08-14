@@ -10,7 +10,9 @@ jobs:
           wget https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1808-beta/uBOLite.beta.safari.zip
           unzip -qd safari-web-extension-converter uBOLite.beta.safari.zip
           xcrun /Applications/Xcode.app/Contents/Developer/usr/bin/safari-web-extension-converter --copy-resources --no-open --no-prompt --force safari-web-extension-converter
-          xcodebuild safari-web-extension-converter -alltargets
+          cd safari-web-extension-converter
+          xcodebuild build -alltargets
+          cd ..
           zip uBOLite.beta.safari.zip -qr safari-web-extension-converter/*
       - name: Upload
         uses: actions/upload-artifact@v4.0.0
