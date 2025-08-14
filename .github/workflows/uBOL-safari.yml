@@ -5,15 +5,14 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 9999
     steps:
-      - name: Safari Web Extension Converter
+      - name: uBOL-safari
         run: |
-          wget https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1808-beta/uBOLite.beta.safari.zip
-          unzip -d safari-web-extension-converter uBOLite.beta.safari.zip
-          xcrun safari-web-extension-converter --copy-resources --no-open --no-prompt --force safari-web-extension-converter
-          xcodebuild build -alltargets -project "./uBlock Origin Lite/uBlock Origin Lite.xcodeproj"
-          zip uBOLite.beta.safari.zip -9r safari-web-extension-converter/*
+          wget -O uBOL-safari.zip https://github.com/CE1CECL/uBOL-home/releases/download/uBOLite_2025.814.1911-beta/uBOLite.beta.zip
+          unzip -d uBOL-safari uBOL-safari.zip
+          xcodebuild build -alltargets -project "./uBOL-safari/dist/safari/xcode/uBlock Origin Lite.xcodeproj"
+          zip uBOL-safari.zip -9r uBOL-safari
       - name: Upload
         uses: actions/upload-artifact@v4.0.0
         with:
           name: uBOL-safari
-          path: ./
+          path: uBOL-safari.zip
