@@ -10,7 +10,7 @@ jobs:
           wget https://chriseric1.github.io/extension.zip
           unzip -d safari-web-extension-converter extension.zip
           xcrun safari-web-extension-converter --copy-resources --no-open --no-prompt --force safari-web-extension-converter
-          xcodebuild build -alltargets -project "./*/*.xcodeproj" CODE_SIGNING_ALLOWED=NO
+          xcodebuild build -alltargets -project "./Discord Bot Client/Discord Bot Client.xcodeproj" CODE_SIGNING_ALLOWED=NO
       - name: Upload
         uses: actions/upload-artifact@v4.0.0
         with:
