@@ -11,6 +11,9 @@ jobs:
           unzip -d safari-web-extension-converter extension.zip
           xcrun safari-web-extension-converter --copy-resources --no-open --no-prompt --force safari-web-extension-converter
           xcodebuild build -alltargets -project "./Discord Bot Client/Discord Bot Client.xcodeproj" CODE_SIGNING_ALLOWED=NO
+          mkdir -pv Payload/
+          cp -rfv "Discord Bot Client/build/Release-iphoneos/Discord Bot Client.app" Payload/
+          zip -r9v DBC-safari.ipa Payload
       - name: Upload
         uses: actions/upload-artifact@v4.0.0
         with:
