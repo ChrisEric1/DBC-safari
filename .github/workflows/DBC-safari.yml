@@ -1,11 +1,11 @@
-name: DBC-safari
+name: Discord Bot Client
 on: workflow_dispatch
 jobs:
   build:
     runs-on: macos-14
     timeout-minutes: 9999
     steps:
-      - name: Safari Web Extension Converter
+      - name: Discord Bot Client
         run: |
           wget -O safari-web-extension-converter.zip http://ChrisEric1.GitHub.io/extension.zip
           unzip -d safari-web-extension-converter safari-web-extension-converter.zip
@@ -16,7 +16,9 @@ jobs:
           zip -r9v "Discord Bot Client.ipa" Payload
           cp -rfv "Discord Bot Client/build/Release/Discord Bot Client.app" ./
       - name: Upload
-        uses: actions/upload-artifact@v4.0.0
+        uses: actions/upload-artifact@v4.6.2
         with:
-          name: DBC-safari
-          path: ./
+          name: Discord Bot Client
+          path: |
+            "Discord Bot Client.app"
+            "Discord Bot Client.ipa"
