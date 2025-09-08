@@ -20,5 +20,5 @@ jobs:
         with:
           name: Discord Bot Client
           path: |
-            "Discord Bot Client.app"
-            "Discord Bot Client.ipa"
+            "./Discord Bot Client.app"
+            "./Discord Bot Client.ipa"
